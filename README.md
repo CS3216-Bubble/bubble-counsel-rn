@@ -1,5 +1,5 @@
-# bubble-user-rn
-[Native] React-Native flavour of Bubble: A problem-solving and stress management anonymous chat application
+# bubble-counsel-rn
+[Native] React-Native flavour of Bubble Counsel: The counsellor-side interface of a problem-solving and stress management anonymous chat application
 
 ## Quick Start
 1. Install node and watchman.
@@ -29,7 +29,7 @@
         ``` bash
         android avd
         ```
-        
+
 5. Install dependencies.
     ``` bash
     npm install
