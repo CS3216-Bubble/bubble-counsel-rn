@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
-import { Card, CardItem, Text } from 'native-base';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import { Platform, StyleSheet, ScrollView } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+import { Container, Content, Header, Title, Footer, FooterTab, Tabs, Card, CardItem, Button, Icon, Text } from 'native-base';
+
+import ProfileComponent from '../components/ProfileComponent';
 
 export default class ProfileView extends Component {
   render() {
-    return (
-      <Grid>
-        <Col>
-          <Card>
-            <CardItem header>
-                <Text>John Tan</Text>
-            </CardItem>
 
-            <CardItem>
-                <Text>
-                    Counsellor
-                </Text>
-            </CardItem>
-          </Card>
-        </Col>
-      </Grid>
+    return (
+      <Container>
+        <Header>
+          <Title>Profile</Title>
+        </Header>
+        <Content>
+          <ProfileComponent />
+        </Content>
+      </Container>
+
     );
   }
 }

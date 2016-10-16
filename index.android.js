@@ -8,25 +8,22 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
-  View
+  Navigator,
+  Text
 } from 'react-native';
+import { Scene, Router, Actions } from 'react-native-router-flux';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Icon } from 'native-base';
+
+import MainView from './app/views/MainView';
 
 export default class BubbleCounsel extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+      <Router sceneStyle={{backgroundColor:'red'}}>
+        <Scene key="root" hideNavBar={true} style={styles.container}>
+          <Scene key="main" component={MainView} title="Issues" initial={true}  />
+        </Scene>
+      </Router>
     );
   }
 }
@@ -34,20 +31,8 @@ export default class BubbleCounsel extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    backgroundColor: '#000000'
+  }
 });
 
 AppRegistry.registerComponent('BubbleCounsel', () => BubbleCounsel);

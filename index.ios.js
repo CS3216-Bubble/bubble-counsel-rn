@@ -8,50 +8,28 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
+  Navigator,
+  Text
 } from 'react-native';
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Icon, } from 'native-base';
-import IssueListView from './app/views/IssueListView';
-import ChatListView from './app/views/ChatListView';
-import ProfileView from './app/views/ProfileView';
+import { Scene, Router, Actions } from 'react-native-router-flux';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Icon } from 'native-base';
+
+import MainView from './app/views/MainView';
 
 export default class BubbleCounsel extends Component {
   render() {
     return (
-      <Container>
-        <Header>
-            <Title>Header</Title>
-        </Header>
-
-        <Content>
-          <IssueListView />
-        </Content>
-
-        <Footer>
-          <FooterTab>
-            <Button active>
-                Issues
-                <Icon name='ios-list' />
-            </Button>
-            <Button>
-                Chats
-                <Icon name='ios-chatboxes' />
-            </Button>
-            <Button>
-                Profile
-                <Icon name='ios-person' />
-            </Button>
-          </FooterTab>
-        </Footer>
-      </Container>
+      <Router>
+        <Scene key="root" hideNavBar={true}>
+          <Scene key="main" component={MainView} title="Issues" initial={true}  />
+        </Scene>
+      </Router>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-  },
+
 });
 
 AppRegistry.registerComponent('BubbleCounsel', () => BubbleCounsel);
