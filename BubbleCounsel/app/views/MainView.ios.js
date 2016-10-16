@@ -40,7 +40,7 @@ export default class AndroidMainView extends Component {
           tintColor="white"
           barTintColor="darkslateblue">
           <TabBarIOS.Item
-            title="Issues"
+            title="ios-list"
             selected={this.state.selectedTab === 'issues'}
             onPress={() => {
               this.setState({
@@ -50,6 +50,7 @@ export default class AndroidMainView extends Component {
             {this._renderContent()}
           </TabBarIOS.Item>
           <TabBarIOS.Item
+            icon="ios-chatboxes"
             title="Chats"
             selected={this.state.selectedTab === 'chats'}
             onPress={() => {
@@ -60,6 +61,7 @@ export default class AndroidMainView extends Component {
             {this._renderContent()}
           </TabBarIOS.Item>
           <TabBarIOS.Item
+            title="ios-person"
             title="Profile"
             selected={this.state.selectedTab === 'profile'}
             onPress={() => {

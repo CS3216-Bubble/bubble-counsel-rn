@@ -6,18 +6,33 @@ import { Container, Content, Header, Title, Footer, FooterTab, Tabs, Card, CardI
 import ProfileComponent from '../components/ProfileComponent';
 
 export default class ProfileView extends Component {
-  render() {
+  state = {
+    user: {
+      name: 'Counsellor Tan',
+      imgSrc: 'https://www.dropbox.com/s/2fth5ceonfa3iww/group.png?raw=1',
+      numThanks: 23,
+      numCheers: 14
+    }
+  }
 
+  render() {
     return (
       <Container>
-        <Header>
-          <Title>Profile</Title>
-        </Header>
-        <Content>
-          <ProfileComponent />
-        </Content>
-      </Container>
 
+        <Header iconRight>
+          <Title>Profile</Title>
+
+          <Button transparent>
+              <Icon name='ios-compose' />
+          </Button>
+        </Header>
+
+
+        <Content>
+          <ProfileComponent user={this.state.user} />
+        </Content>
+
+      </Container>
     );
   }
 }
