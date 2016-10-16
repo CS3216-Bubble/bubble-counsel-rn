@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, TabBarIOS, Text, View } from 'react-native';
-import { Actions } from 'react-native-router-flux';
 import { Container, Content, Header, Title } from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -37,9 +36,7 @@ export default class MainView extends Component {
 
   render() {
     return (
-        <TabBarIOS
-          tintColor="white"
-          barTintColor="darkslateblue">
+        <TabBarIOS>
           <Icon.TabBarItemIOS
             title="Issues"
             iconName="ios-list-outline"
