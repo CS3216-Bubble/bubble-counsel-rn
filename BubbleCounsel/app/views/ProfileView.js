@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, ScrollView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { Container, Content, Header, Title, Footer, FooterTab, Tabs, Card, CardItem, Button, Icon, Text } from 'native-base';
+import { Container, Content, Header, Title, Footer, FooterTab, Tabs, Card, CardItem, Button, Text } from 'native-base';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import ProfileComponent from '../components/ProfileComponent';
 
@@ -23,7 +24,7 @@ export default class ProfileView extends Component {
           <Title>Profile</Title>
 
           <Button transparent>
-              <Icon name='ios-compose' />
+              <Icon size={30} name='ios-create-outline' color="#0E7AFE"/>
           </Button>
         </Header>
 

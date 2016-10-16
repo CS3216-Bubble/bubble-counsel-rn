@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, TabBarIOS, Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { Container, Content, Header, Title } from 'native-base';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import IssueListView from './IssueListView';
 import ChatListView from './ChatListView';
 import ProfileView from './ProfileView';
 
-export default class AndroidMainView extends Component {
+export default class MainView extends Component {
   state = {
     selectedTab: 'issues',
     notifCount: 0,
@@ -39,8 +40,9 @@ export default class AndroidMainView extends Component {
         <TabBarIOS
           tintColor="white"
           barTintColor="darkslateblue">
-          <TabBarIOS.Item
-            title="ios-list"
+          <Icon.TabBarItemIOS
+            title="Issues"
+            iconName="ios-list-outline"
             selected={this.state.selectedTab === 'issues'}
             onPress={() => {
               this.setState({
@@ -48,10 +50,10 @@ export default class AndroidMainView extends Component {
               });
             }}>
             {this._renderContent()}
-          </TabBarIOS.Item>
-          <TabBarIOS.Item
-            icon="ios-chatboxes"
+          </Icon.TabBarItemIOS>
+          <Icon.TabBarItemIOS
             title="Chats"
+            iconName="ios-chatboxes"
             selected={this.state.selectedTab === 'chats'}
             onPress={() => {
               this.setState({
@@ -59,10 +61,10 @@ export default class AndroidMainView extends Component {
               });
             }}>
             {this._renderContent()}
-          </TabBarIOS.Item>
-          <TabBarIOS.Item
-            title="ios-person"
+          </Icon.TabBarItemIOS>
+          <Icon.TabBarItemIOS
             title="Profile"
+            iconName="ios-person-outline"
             selected={this.state.selectedTab === 'profile'}
             onPress={() => {
               this.setState({
@@ -70,7 +72,7 @@ export default class AndroidMainView extends Component {
               });
             }}>
             {this._renderContent()}
-          </TabBarIOS.Item>
+          </Icon.TabBarItemIOS>
         </TabBarIOS>
     );
   }
