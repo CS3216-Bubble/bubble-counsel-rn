@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View, ScrollView } from 'react-native';
+import { Card, CardItem, Button, Icon, Text } from 'native-base';
 
 export default class IssueListComponent extends Component {
   static get defaultProps() {
@@ -10,15 +11,23 @@ export default class IssueListComponent extends Component {
 
   render() {
     return (
-      <View>
-        <Text>Current Scene: { this.props.title }</Text>
-        <TouchableHighlight onPress={this.props.onForward}>
-          <Text>Tap me to load the next scene</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={this.props.onBack}>
-          <Text>Tap me to go back</Text>
-        </TouchableHighlight>
-      </View>
+      <ScrollView>
+        <Card>
+          <CardItem header onPress={this.props.onForward}>
+              <Text>Flagged User</Text>
+          </CardItem>
+
+          <CardItem>
+              <Text>
+                  User1 was flagged at 10:00pm
+              </Text>
+          </CardItem>
+
+          <CardItem header>
+              <Text>Handled by: None</Text>
+          </CardItem>
+        </Card>
+      </ScrollView>
     )
   }
 }
