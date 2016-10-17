@@ -7,7 +7,6 @@ import ChatListComponent from '../components/ChatListComponent';
 
 export default class ChatListView extends Component {
   render() {
-
     return (
       <Container>
         <Header>

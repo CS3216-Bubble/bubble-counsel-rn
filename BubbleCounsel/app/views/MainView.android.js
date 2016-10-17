@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
-import { Actions } from 'react-native-router-flux';
-import { Container, Content, Header, Title, Footer, FooterTab, Tabs, Card, CardItem, Button, Icon, Text } from 'native-base';
+import { Container, Content, Header, Title, Tabs } from 'native-base';
 
 import IssueListComponent from '../components/IssueListComponent';
-import ChatListView from './ChatListView';
-import ProfileView from './ProfileView';
+import ChatListComponent from '../components/ChatListComponent';
+import ProfileComponent from '../components/ProfileComponent';
 
 export default class MainView extends Component {
   render() {
@@ -17,8 +15,8 @@ export default class MainView extends Component {
         <Content>
           <Tabs>
             <IssueListComponent tabLabel='Issues' />
-            <ChatListView tabLabel='Chats' />
-            <ProfileView tabLabel='Profile' />
+            <ChatListComponent tabLabel='Chats' />
+            <ProfileComponent tabLabel='Profile' />
           </Tabs>
         </Content>
       </Container>

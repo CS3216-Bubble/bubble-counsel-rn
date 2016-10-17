@@ -9,7 +9,7 @@ export default class BubbleCounsel extends Component {
     return (
       <Router>
         <Scene key="root" hideNavBar={true} >
-          <Scene key="main" component={MainView} title="Issues" initial={true}  />
+          <Scene key="main" component={MainView} title="Main" initial={true}  />
         </Scene>
       </Router>
     );
